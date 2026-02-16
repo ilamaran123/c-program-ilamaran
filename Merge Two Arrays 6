@@ -1,0 +1,63 @@
+Here is a simple C program to merge two sorted arrays without duplicates:
+
+#include <stdio.h>
+
+int main()
+{
+    int n1, n2, i = 0, j = 0;
+    int a[20], b[20];
+
+    // Read first array size
+    scanf("%d", &n1);
+
+    // Read first sorted array
+    for(int k = 0; k < n1; k++)
+    {
+        scanf("%d", &a[k]);
+    }
+
+    // Read second array size
+    scanf("%d", &n2);
+
+    // Read second sorted array
+    for(int k = 0; k < n2; k++)
+    {
+        scanf("%d", &b[k]);
+    }
+
+    // Merge arrays without duplicates
+    while(i < n1 && j < n2)
+    {
+        if(a[i] < b[j])
+        {
+            printf("%d ", a[i]);
+            i++;
+        }
+        else if(a[i] > b[j])
+        {
+            printf("%d ", b[j]);
+            j++;
+        }
+        else
+        {
+            printf("%d ", a[i]);
+            i++;
+            j++;
+        }
+    }
+
+    // Print remaining elements
+    while(i < n1)
+    {
+        printf("%d ", a[i]);
+        i++;
+    }
+
+    while(j < n2)
+    {
+        printf("%d ", b[j]);
+        j++;
+    }
+
+    return 0;
+}
