@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i;
+    int arr[20], temp;
+
+    // Read number of elements
+    scanf("%d", &n);
+
+    // Read array elements
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // Find starting index of second half
+    int start = n / 2;
+    int end = n - 1;
+
+    // Reverse second half
+    while(start < end)
+    {
+        temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+
+        start++;
+        end--;
+    }
+
+    // Print array
+    for(i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
