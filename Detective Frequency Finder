@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i, x, count = 0;
+    int arr[1000];
+
+    // Read size
+    scanf("%d", &n);
+
+    // Read array elements
+    for(i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    // Read element to search
+    scanf("%d", &x);
+
+    // Count frequency
+    for(i = 0; i < n; i++)
+    {
+        if(arr[i] == x)
+            count++;
+    }
+
+    // Print result
+    printf("%d", count);
+
+    return 0;
+}
