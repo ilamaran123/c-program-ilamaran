@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int G;   // Global variable
+
+int main()
+{
+    int L;   // Local variable
+
+    scanf("%d %d", &G, &L);
+
+    printf("Global: %d\n", G);
+    printf("Local: %d\n", L);
+
+    return 0;
+}
