@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int n, m, i, j;
+
+    scanf("%d %d", &n, &m);
+
+    int a[n][m];
+
+    // Read matrix elements
+    for(i = 0; i < n; i++) {
+        for(j = 0; j < m; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    // Find and print minimum in each row
+    for(i = 0; i < n; i++) {
+        int min = a[i][0];   // Assume first element is minimum
+
+        for(j = 1; j < m; j++) {
+            if(a[i][j] < min) {
+                min = a[i][j];
+            }
+        }
+
+        printf("%d\n", min);
+    }
+
+    return 0;
+}
